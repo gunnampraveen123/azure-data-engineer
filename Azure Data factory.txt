@@ -1,0 +1,6 @@
+Azure Data factory 
+
+it is a cloud based ETL on Azure.
+
+it is a integration and orchestrating service.
+

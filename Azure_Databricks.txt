@@ -1,0 +1,145 @@
+Azure Databricks
+PySpark
+Spark SQL
+Delta Lake
+Data Lake Storage Gen2
+Azure Data Factory
+Azure Key Vault
+PowerBI
+
+Project : Formula1 Cloud Data Platform 
+
+== Azure Databricks ==
+
+Apache Spark
+============
+Apache Spark is developed on top of Hadoop to replace MapReduce
+	open source
+	Simple and easy API's
+	in-memory processing
+	Distributed computing platform
+	Unified engine which supports SQL, streaming, ML and graph processing
+
+Spark Architecture
+
+SparkSQL
+SparkStreaming
+SparkML
+Spark Graph
+DataFrame/Dataset API
+
+Spark SQL Engine
+	Catalyst optimizer
+	Tungsten
+Spark Core
+	Scala
+	Python
+	Java
+	R
+	RDD's(resilient distributed dataset's)
+Spark Standalone, YARN, Mesos, Kubernetes
+
+Databricks
+=========
+ clusters
+ workspace/notebooks
+ Administration on controls
+ Optimized Spark
+ Databases/Tables
+ Delta Lake
+ SQL Analytics
+ ML Flow
+
+Databricks available on all main cloud platforms GCP/AWS/Azure, but Databricks on Azure is unified with Azure cloud
+
+unified azure portal+ unified billing
+Data services == data lake, blob storage, cosmos DB, SQl Database, synapse
+Messaging Services = IOT Hub, Event Hub
+Power BI
+Azure ML
+Azure Data Factory
+Azure Active Directory
+Azure Devops 
+
+Databricks architecture
+ Control plane (adb subscription)
+	databricks cluster manager
+	databricks ux
+	dbfs 
+	clusters
+ Data Plane (customer subscription)
+	(Vnet) virtual network,  (nsg) network security group
+	VM's
+	Azure blob storage
+	databricks workspace
+
+Databricks clusters
+
+what is databricks cluster
+cluster types
+cluster configuration
+creating cluster
+pricing
+cost control
+cluster pools
+cluster policy
+
+Databricks cluster
+collection of multiple vms 
+Driver vm/node
+worker vm's/nodes
+
+cluster types
+
+all purpose 	|	job cluster
+====================================
+created manually	created by job
+persistent		terminated at the end of the job
+Suitable for interactive suitable for automated workloads 
+workloads
+shared among many users	isolated just for the job
+expensive to run	cheaper to run
+
+cluster configurations
+	single/multi Node 
+	access mode
+		single user
+		 only one use access supports python, sql, scala, r
+		shared 
+		 only available in premium. supports python, sql.
+		no isolation shared
+		 multiple user access supports python, sql, scala, R
+		Custom
+		 legacy config
+	Databricks runtime
+		databricks runtime
+			spark, scala, java, python, r, ubantu libraries, gpu libraries, delta lake, other db services
+		databricks runtime ml
+			everything from databricks runtime, popular ML libraries(pytorch, keras, tensorflow, xgboost etc)
+		photon runtime
+			everything from db runtime, photon engine
+		databricks runtime light
+			runtime only for only jobs not requiring advanced features
+	Auto termination
+		terminates the cluster after X minutes of inactivity
+		Defalut value for single node and standard cluster in 120 min
+		users can specify a value between 10 and 100000 mins as the duration
+
+	Auto scaling
+		users specifies the min and max work nodes
+		auto scales between min and max based on the workload
+		not recommended for streaming workloads
+	Cluster VM types/size
+		memory optimized
+		compute optimized
+		storage optimized
+		general purpose 
+		GPU accelerated
+	Cluster Policy
+		unrestricted
+		personal compute
+		simplifies the user interface
+		enable standard users to create cluster
+		achieves cost control
+		only available on prem tier
+
